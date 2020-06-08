@@ -3,6 +3,7 @@ import knex from "../database/connection";
 
 class PointsController {
 
+  //INDEX
   async index(req: Request, res: Response){
     const { city, uf, items } = req.query;
 
@@ -21,6 +22,7 @@ class PointsController {
     return res.json(points)
   }
 
+  //SHOW
   async show(req: Request, res: Response) {
     const { id } = req.params;
 
@@ -40,6 +42,7 @@ class PointsController {
     });
   }
 
+  //CREATE
   async create(req: Request, res: Response) {
     const {
       name,
